@@ -8,25 +8,25 @@
 
 ## GROUP MEMBERS
 
-Irene Njoroge:	Create the GitHub repository, add collaborators, create folder structure, initialize README.
+Irene Njoroge(C027-01-0882/2024):	Create the GitHub repository, add collaborators, create folder structure, initialize README.
 
-Irene Serianai:	Prepare the user research questionnaire/interview guide and coordinate interviews.
+Irene Serianai(C027-01-0848/2024):	Prepare the user research questionnaire/interview guide and coordinate interviews.
 
-Rachael Murithi:	Write the Problem Statement, Objectives, and Target Users section for the README and documentation.
+Rachael Muriithi(C027-01-0895/2024):	Write the Problem Statement, Objectives, and Target Users section for the README and documentation.
 
-Alex Njenga:	Develop two User Personas and the User Journey.
+Alex Njenga(C027-01-0830/2024):	Develop two User Personas and the User Journey.
 
-Francis Mwariri:	Draw the initial low-fidelity sketches (paper or digital).
+Francis Mwariri(C027-01-0829/2024):	Draw the initial low-fidelity sketches (paper or digital).
 
-Kibet Kerich:	Convert sketches into the first 4–6 Balsamiq mobile screens.
+Kibet Kerich(C027-01-0917/2024):	Convert sketches into the first 4–6 Balsamiq mobile screens.
 
-Erickson Kibet	Design the Information Architecture (navigation flow and screen hierarchy).
+Erickson Kibet(C027-01-2798/2024):	Design the Information Architecture (navigation flow and screen hierarchy).
 
-Brian Kirunde:	Write the Functional Requirements and Mobile Usability Requirements.
+Brian Kirunde(C027-01-0886/2024):	Write the Functional Requirements and Mobile Usability Requirements.
 
-Terence: Prepare the Task Flow diagrams and review all documentation for consistency.
+Terence Kamau(C027-01-0790/2024): Prepare the Task Flow diagrams and review all documentation for consistency.
 
-Nyori:	Organize the project folders, ensure everyone uploads their work, and start preparing the presentation template.
+Joseph Nyori(C027-01-0460/2024):	Organize the project folders, ensure everyone uploads their work, and start preparing the presentation template.
 
 # 1. Introduction
 
