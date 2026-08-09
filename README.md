@@ -9,14 +9,23 @@
 ## GROUP MEMBERS
 
 Irene Njoroge:	Create the GitHub repository, add collaborators, create folder structure, initialize README.
+
 Irene Serianai:	Prepare the user research questionnaire/interview guide and coordinate interviews.
+
 Rachael Murithi:	Write the Problem Statement, Objectives, and Target Users section for the README and documentation.
+
 Alex Njenga:	Develop two User Personas and the User Journey.
+
 Francis Mwariri:	Draw the initial low-fidelity sketches (paper or digital).
+
 Kibet Kerich:	Convert sketches into the first 4–6 Balsamiq mobile screens.
+
 Erickson Kibet	Design the Information Architecture (navigation flow and screen hierarchy).
+
 Brian Kirunde:	Write the Functional Requirements and Mobile Usability Requirements.
+
 Terence: Prepare the Task Flow diagrams and review all documentation for consistency.
+
 Nyori:	Organize the project folders, ensure everyone uploads their work, and start preparing the presentation template.
 
 # 1. Introduction
