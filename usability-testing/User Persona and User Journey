@@ -1,0 +1,103 @@
+User Personas and User Journey
+1. User Persona 1 – Brian Kamau
+Age: 20 years
+Programme: Bachelor of Business Information Technology (BBIT)
+Year of Study: 2nd Year
+Goals
+•	Register for courses quickly. 
+•	Check examination results. 
+•	View his fee statement. 
+•	Receive important university announcements. 
+Needs
+•	A single platform for accessing student services. 
+•	Simple course registration. 
+•	Easy access to academic results and fee information. 
+•	Notifications about important university activities. 
+Pain Points
+•	Has to use different systems or visit offices to access some services. 
+•	Sometimes struggles to know whether course registration was successful. 
+•	Delayed access to important academic information. 
+Technology Habits
+•	Uses a smartphone every day. 
+•	Frequently uses mobile applications for communication, education, and online services. 
+•	Prefers self-service applications rather than visiting offices. 
+App Expectations
+Brian expects the app to have:
+•	Easy navigation. 
+•	Course registration. 
+•	Fee statements. 
+•	Academic results. 
+•	Notifications. 
+•	A simple dashboard. 
+________________________________________
+2. User Persona 2 – Mary Wanjiku
+Age: 22 years
+Programme: Bachelor of Business Administration
+Year of Study: 4th Year
+Goals
+•	Monitor her fee balance. 
+•	Check examination results. 
+•	Access academic information remotely. 
+•	Receive updates about graduation and university activities. 
+Needs
+•	Quick access to financial information. 
+•	Reliable academic records. 
+•	Notifications for important deadlines. 
+•	A convenient way to access university services from anywhere. 
+Pain Points
+•	Sometimes needs to visit university offices to obtain information. 
+•	Difficulty keeping track of different university announcements. 
+•	Waiting for assistance when she needs information urgently. 
+Technology Habits
+•	Uses a smartphone regularly. 
+•	Comfortable using mobile banking, social media, and educational applications. 
+•	Prefers mobile services that are quick and easy to understand. 
+App Expectations
+Mary expects the app to provide:
+•	Fee statements. 
+•	Academic results. 
+•	Student profile management. 
+•	University announcements. 
+•	Notifications. 
+•	Easy-to-use navigation. 
+________________________________________
+3. User Journey – Brian: Course Registration
+Goal:
+Register for courses for the new semester.
+Stage	User Action	User Goal	Experience
+1. Open App	Opens the student portal	Access university services	     Easy
+2. Login	Enters username and password	Access account	     Easy
+3. Dashboard	Selects Course Registration	Find registration service	     Positive
+4. View Courses	Views available courses	Choose required courses	     Positive
+5. Select Courses	Selects courses for the semester	Complete registration	     Easy
+6. Review	Checks selected courses	Avoid mistakes	     Positive
+7. Confirm	Taps Register/Confirm	Submit registration	     Easy
+8. Confirmation	Receives confirmation message	Know registration succeeded	     Positive
+9. View Courses	Opens registered courses	Confirm final registration	     Positive
+User Journey Flow
+Open App → Login → Dashboard → Course Registration → View Courses → Select Courses → Review → Confirm → Registration Successful
+________________________________________
+4. User Journey – Mary: Checking Fee Statement
+Goal:
+Check her current fee balance without visiting the finance office.
+Stage	User Action	User Goal	Experience
+1. Open App	Opens the student portal	Access account	Easy
+2. Login	Enters login details	Access student services	Easy
+3. Dashboard	Selects Fee Statement	Find financial information	Positive
+4. View Statement	Opens current fee statement	Check balance	Easy
+5. Review	Checks fees paid and outstanding balance	Understand financial status	Positive
+6. Save/Download	Saves the statement	Keep a record	Easy
+7. Notification	Receives relevant fee notification	Stay informed	Positive
+User Journey Flow
+Open App → Login → Dashboard → Fee Statement → View Balance → Review Statement → Download → Stay Informed
+________________________________________
+5. HCI/User-Centered Design Connection
+These personas and journeys demonstrate that the student portal is designed around real user goals, needs, and pain points.
+User Problem	Design  Response
+Difficulty accessing services	Centralized mobile dashboard
+	
+Visiting offices for information	Digital self-service
+Uncertainty about registration	Registration confirmation
+Difficulty checking fees	Online fee statement
+Missing important announcements	Push notifications
+Complicated navigation	Simple and consistent interface
