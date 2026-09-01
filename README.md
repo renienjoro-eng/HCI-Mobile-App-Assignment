@@ -26,7 +26,7 @@ Brian Kirunde(C027-01-0886/2024):	Write the Functional Requirements and Mobile U
 
 Terence Kamau(C027-01-0790/2024): Prepare the Task Flow diagrams and review all documentation for consistency.
 
-Joseph Nyori(C027-01-0460/2024):	Organize the project folders, ensure everyone uploads their work, and start preparing the presentation template.
+Joseph Nyori(C027-01-0460/2022):	Organize the project folders, ensure everyone uploads their work, and start preparing the presentation template.
 
 # 1. Introduction
 
