@@ -197,6 +197,9 @@
 - **Early Concepts (from Francis Mwariri's sketches):** 12 low-fidelity sketches covering Splash Screen, Login Screen, Student Dashboard, Course Registration, Browse Courses, Select Courses, Review Course Selection, Registration Confirmation, Fee Statements, Academic Results, Student Profile, and Edit Profile.
 - **Design Decisions:** Layouts chosen to prioritize mobile navigation, clear information hierarchy, touch-friendly controls, and consistency. Standardized terminology across documentation (see Slide 12): use "Student Portal" for the app/portal, "Dashboard" for the main landing screen, "Course Registration" for Brian's service, and "Fee Statement" for Mary's service; confirmation terminology standardized to "Registration Successful" / "confirmation message".
 
+![Low-fi wireframe page 1](screens/lowfi-page-01.png)
+![Low-fi wireframe page 2](screens/lowfi-page-02.png)
+
 ---
 
 ## Slide 8: Balsamiq High-Fidelity Prototype Overview
@@ -207,6 +210,9 @@
   - **Scenario 1 — Course Registration:** Browse available courses → select required courses → review selection → confirm registration → receive confirmation → view registered courses.
   - **Scenario 2 — Checking Fee Statements:** Login → fee statement → view current balance → review fees paid & outstanding balance → save/download statement → receive fee notification.
   - **Scenario 3 — Checking Academic Results:** Login → academic results → select academic period → view results → return to dashboard.
+
+![High-fi prototype page 1](screens/hifi-page-01.png)
+![High-fi prototype page 2](screens/hifi-page-02.png)
 
 ---
 
