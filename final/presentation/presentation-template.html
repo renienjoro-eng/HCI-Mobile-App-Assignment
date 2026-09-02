@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>University Student Portal Mobile App — Presentation Template</title>
+<style>
+  :root {
+    --bg: #0b0f19;
+    --slide-bg: #111827;
+    --accent: #38bdf8;
+    --accent2: #818cf8;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --glass: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.1);
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #000; color: var(--text); font-family: var(--font); overflow: hidden; }
+
+  /* Slide container */
+  #deck { position: relative; width: 100vw; height: 100vh; }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 6vmin 8vmin;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: scale(0.97);
+    background: radial-gradient(ellipse at 20% 20%, rgba(56,189,248,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(129,140,248,0.06) 0%, transparent 60%),
+                var(--slide-bg);
+  }
+  .slide.active { opacity: 1; pointer-events: auto; transform: scale(1); }
+  .slide.left  { transform: translateX(-100%); }
+  .slide.left.active  { transform: translateX(0); }
+  .slide.right { transform: translateX(100%); }
+  .slide.right.active { transform: translateX(0); }
+
+  /* Typography */
+  h1 { font-size: clamp(2.2rem, 6vmin, 4.8rem); line-height: 1.1; color: #fff; }
+  h2 { font-size: clamp(1.6rem, 4vmin, 3.2rem); color: var(--accent); margin-bottom: 1.5rem; }
+  h3 { font-size: clamp(1.1rem, 2.4vmin, 1.7rem); color: var(--accent2); margin-bottom: 0.5rem; }
+  p, li { font-size: clamp(0.95rem, 1.9vmin, 1.35rem); line-height: 1.6; color: var(--text); max-width: 90ch; }
+  ul { list-style: none; }
+  li { padding-left: 1.4em; position: relative; }
+  li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+  .small { color: var(--muted); font-size: 0.72em; margin-top: 1rem; }
+  .tag { display: inline-block; background: var(--glass); border: 1px solid var(--border); border-radius: 999px; padding: 0.25em 0.8em; font-size: 0.78em; margin: 0.25em; color: var(--muted); }
+
+  /* Layouts */
+  .grid { display: grid; gap: 1.5rem; width: 100%; max-width: 1200px; }
+  .grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--glass); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+
+  /* Title slide */
+  #title { text-align: center; }
+  #title h1 { margin-bottom: 0.5rem; }
+  #title .sub { color: var(--muted); font-size: clamp(1rem, 2vmin, 1.5rem); }
+  .meta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; color: var(--muted); font-size: 0.95rem; }
+
+  /* Flow diagram */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem; }
+  .flow .step { background: var(--glass); border: 1px solid var(--border); border-radius: 999px; padding: 0.5em 1.2em; font-size: 0.9rem; }
+  .flow .arrow { color: var(--accent); font-size: 1.4rem; }
+
+  /* Slide footer */
+  .footer { position: absolute; bottom: 2vmin; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 1rem; color: var(--muted); font-size: 0.8rem; }
+  .footer .dots { display: flex; gap: 6px; }
+  .footer .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; }
+  .footer .dot.active { background: var(--accent); }
+
+  /* Notes panel */
+  #notes { position: fixed; bottom: 0; left: 0; right: 0; max-height: 40vh; background: #0d1117; border-top: 2px solid var(--accent); transform: translateY(100%); transition: transform 0.3s ease; padding: 1.5rem 2rem; overflow-y: auto; z-index: 10; }
+  #notes.open { transform: translateY(0); }
+  #notes h4 { color: var(--accent); margin-bottom: 0.5rem; }
+  #notes p { color: var(--text); }
+
+  /* Controls hint */
+  .hint { position: absolute; top: 2vmin; right: 3vmin; color: var(--muted); font-size: 0.8rem; }
+
+  /* Print */
+  @media print {
+    html, body { background: #fff; color: #111; overflow: visible; }
+    #deck { position: static; height: auto; }
+    .slide { position: relative; opacity: 1 !important; transform: none !important; page-break-after: always; background: #fff; padding: 2rem; border-bottom: 1px solid #ccc; }
+    .slide:last-child { page-break-after: auto; }
+    .slide h1, .slide h2 { color: #000; }
+    .slide p, .slide li { color: #222; }
+    .hint, #notes, .footer { display: none; }
+    .slide .notes { display: block !important; page-break-inside: avoid; margin-top: 2rem; border-top: 1px dashed #aaa; padding-top: 1rem; color: #444; }
+  }
+</style>
+</head>
+<body>
+
+<div id="deck">
+
+  <!-- 1 Title -->
+  <section class="slide active" data-notes="Welcome to the presentation. Press Right Arrow or Space to advance. Press N to toggle speaker notes. Press P to print this deck.">
+    <div id="title">
+      <h1>University Student Portal<br>Mobile App</h1>
+      <p class="sub">Human–Computer Interaction (HCI) Group Project</p>
+      <div class="meta">
+        <span>Group 1</span>
+        <span>BBIT 3.1 / CIT3108 / CIT4101</span>
+        <span>Prepared by Joseph Nyori</span>
+      </div>
+      <p class="small">Presentation template — fill each slide with group findings.</p>
+    </div>
+    <span class="hint">Arrow keys / Space / N / P</span>
+  </section>
+
+  <!-- 2 Introduction -->
+  <section class="slide" data-notes="Explain the project scope: a mobile prototype for university student services using Balsamiq and GitHub.">
+    <h2>Introduction</h2>
+    <ul>
+      <li>Mobile app prototype for university students</li>
+      <li>Brings course registration, fees, results and profile into one place</li>
+      <li>Designed with HCI principles</li>
+      <li>Prototype built with Balsamiq; managed with GitHub</li>
+    </ul>
+    <span class="notes">Speaker notes: emphasize that this is a design prototype, not a coded application.</span>
+  </section>
+
+  <!-- 3 Problem Statement -->
+  <section class="slide" data-notes="Frame the pain: scattered services, confusing interfaces, smartphone-first students.">
+    <h2>Problem Statement</h2>
+    <ul>
+      <li>Students struggle to access scattered academic and admin services</li>
+      <li>Complicated interfaces cause delays and confusion</li>
+      <li>Smartphone-first users need a single, simple portal</li>
+    </ul>
+  </section>
+
+  <!-- 4 Objectives -->
+  <section class="slide" data-notes="General objective plus 10 specific objectives from the README.">
+    <h2>Project Objectives</h2>
+    <h3>General</h3>
+    <p>Design a user-friendly mobile app that simplifies access to university services through a centralized interface.</p>
+    <h3>Specific (selected)</h3>
+    <ul>
+      <li>Simple course registration flow</li>
+      <li>Easy fee statement and results access</li>
+      <li>Profile management with clear feedback</li>
+      <li>User-centered design and usability testing</li>
+    </ul>
+  </section>
+
+  <!-- 5 Target Users -->
+  <section class="slide" data-notes="Primary: university students. Also new students and continuing students.">
+    <h2>Target Users</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>Primary Users</h3><p>All university students needing daily services.</p></div>
+      <div class="card"><h3>New Students</h3><p>Need orientation to university systems.</p></div>
+      <div class="card"><h3>Continuing Students</h3><p>Use the portal regularly for routine tasks.</p></div>
+    </div>
+  </section>
+
+  <!-- 6 User Research -->
+  <section class="slide" data-notes="At least 5 users. Focus on access patterns, difficulties, preferences and expectations.">
+    <h2>User Research</h2>
+    <ul>
+      <li>How students currently access services</li>
+      <li>Common difficulties and pain points</li>
+      <li>Preferred navigation and feedback patterns</li>
+      <li>Dashboard expectations</li>
+    </ul>
+  </section>
+
+  <!-- 7 Persona 1 -->
+  <section class="slide" data-notes="Persona 1 — New Student. Goals, needs, pain points.">
+    <h2>User Persona 1 — The New Student</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Goals</h3><ul><li>Find services easily</li><li>Register without confusion</li><li>Check fees and results</li></ul></div>
+      <div class="card"><h3>Needs</h3><ul><li>Simple navigation</li><li>Clear instructions</li><li>Confirmation after tasks</li></ul></div>
+    </div>
+    <p class="small">Pain points: complicated interfaces, hard-to-locate services, uncertainty about success.</p>
+  </section>
+
+  <!-- 8 Persona 2 -->
+  <section class="slide" data-notes="Persona 2 — Continuing Student.">
+    <h2>User Persona 2 — The Continuing Student</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Goals</h3><ul><li>Quick course registration</li><li>Fast results and fee checks</li><li>Profile management</li></ul></div>
+      <div class="card"><h3>Needs</h3><ul><li>Fast access to frequent services</li><li>Clear dashboard</li><li>Reliable feedback</li></ul></div>
+    </div>
+    <p class="small">Pain points: time-consuming processes, complicated navigation, difficulty locating info.</p>
+  </section>
+
+  <!-- 9 User Journey -->
+  <section class="slide" data-notes="High-level journey: Open → Login → Dashboard → Select Service → Complete Task → Feedback → Dashboard.">
+    <h2>User Journey</h2>
+    <div class="flow">
+      <span class="step">Open App</span><span class="arrow">→</span>
+      <span class="step">Login</span><span class="arrow">→</span>
+      <span class="step">Dashboard</span><span class="arrow">→</span>
+      <span class="step">Select Service</span><span class="arrow">→</span>
+      <span class="step">Complete Task</span><span class="arrow">→</span>
+      <span class="step">Feedback</span><span class="arrow">→</span>
+      <span class="step">Dashboard</span>
+    </div>
+  </section>
+
+  <!-- 10 Task Flows -->
+  <section class="slide" data-notes="Course registration, fee statement, academic results and profile management flows.">
+    <h2>Task Flows</h2>
+    <h3>Course Registration</h3>
+    <div class="flow"><span class="step">Login</span><span class="arrow">→</span><span class="step">Dashboard</span><span class="arrow">→</span><span class="step">Courses</span><span class="arrow">→</span><span class="step">Select</span><span class="arrow">→</span><span class="step">Confirm</span></div>
+    <h3>Fee Statement / Results / Profile</h3>
+    <div class="flow"><span class="step">Login</span><span class="arrow">→</span><span class="step">Dashboard</span><span class="arrow">→</span><span class="step">Service</span><span class="arrow">→</span><span class="step">Review</span><span class="arrow">→</span><span class="step">Dashboard</span></div>
+  </section>
+
+  <!-- 11 Info Architecture -->
+  <section class="slide" data-notes="Tree: Login, Dashboard (courses/fees/results/profile), Mobile nav (home/courses/fees/results/profile).">
+    <h2>Information Architecture</h2>
+    <pre style="white-space:pre-wrap; font-size:clamp(0.8rem,1.6vmin,1.1rem); color:var(--text);">
+University Student Portal
+├── Login
+├── Dashboard
+│   ├── Course Registration
+│   ├── Fee Statements
+│   ├── Academic Results
+│   └── Student Profile
+└── Mobile Navigation
+    ├── Home
+    ├── Courses
+    ├── Fees
+    ├── Results
+    └── Profile</pre>
+  </section>
+
+  <!-- 12 Low-Fi Sketches -->
+  <section class="slide" data-notes="12 low-fidelity sketches covering splash, login, dashboard, courses, profile, etc.">
+    <h2>Low-Fidelity Sketches</h2>
+    <ul>
+      <li>Splash, Login, Dashboard</li>
+      <li>Course registration &amp; browsing</li>
+      <li>Fee statements, academic results</li>
+      <li>Student profile &amp; edit</li>
+    </ul>
+    <p class="small">Evidence: <code>wireframes/Low Fidelity wireframe sketches.pdf</code></p>
+  </section>
+
+  <!-- 13 Balsamiq Prototype -->
+  <section class="slide" data-notes="12+ linked Balsamiq screens and 3 complete user scenarios.">
+    <h2>Balsamiq Prototype</h2>
+    <ul>
+      <li>12+ meaningful linked mobile screens</li>
+      <li>Interactive wireframes</li>
+      <li>3 complete user scenarios</li>
+      <li>High-fidelity PDF evidence in repo</li>
+    </ul>
+  </section>
+
+  <!-- 14 Scenarios -->
+  <section class="slide" data-notes="Three main scenarios: course registration, checking fees, checking results.">
+    <h2>Mobile User Scenarios</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>Course Registration</h3><p>Browse, select, review, confirm.</p></div>
+      <div class="card"><h3>Fee Statements</h3><p>Login, view, review, return.</p></div>
+      <div class="card"><h3>Academic Results</h3><p>Login, select period, view, return.</p></div>
+    </div>
+  </section>
+
+  <!-- 15 Usability Testing -->
+  <section class="slide" data-notes="Plan for at least 5 users, tasks, observations, findings and prototype revision.">
+    <h2>Usability Testing Plan</h2>
+    <ul>
+      <li>5+ representative users</li>
+      <li>Task completion, navigation, errors</li>
+      <li>Label clarity and ease of use</li>
+      <li>Revise prototype based on findings</li>
+    </ul>
+  </section>
+
+  <!-- 16 Findings -->
+  <section class="slide" data-notes="Template for findings: tasks, difficulties, errors, recommendations.">
+    <h2>Usability Testing Findings</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Successes</h3><ul><li>Tasks completed</li><li>Clear labels</li><li>Feedback understood</li></ul></div>
+      <div class="card"><h3>Problems</h3><ul><li>Navigation issues</li><li>Error-prone steps</li><li>Unclear controls</li></ul></div>
+    </div>
+    <p class="notes">Speaker notes: summarize observations and link each issue to a design change.</p>
+  </section>
+
+  <!-- 17 Iterations -->
+  <section class="slide" data-notes="Iterative cycle: sketches → prototype → walkthrough → testing → improve → better prototype.">
+    <h2>Design Iterations</h2>
+    <div class="flow"><span class="step">Sketches</span><span class="arrow">→</span><span class="step">Prototype</span><span class="arrow">→</span><span class="step">Walkthrough</span><span class="arrow">→</span><span class="step">Testing</span><span class="arrow">→</span><span class="step">Improve</span><span class="arrow">→</span><span class="step">Better Prototype</span></div>
+    <p class="small">Focus: navigation, IA, button placement, feedback, error prevention, touch, consistency.</p>
+  </section>
+
+  <!-- 18 Final Prototype -->
+  <section class="slide" data-notes="Summary of final prototype and presentation deliverables.">
+    <h2>Final Prototype</h2>
+    <ul>
+      <li>All design iterations applied</li>
+      <li>Usability findings addressed</li>
+      <li>Final Balsamiq screens ready</li>
+      <li>Presentation and final report prepared</li>
+    </ul>
+  </section>
+
+  <!-- 19 Limitations -->
+  <section class="slide" data-notes="Prototype is not production: no backend, no real DB, no payments, no live results.">
+    <h2>Limitations</h2>
+    <ul>
+      <li>HCI prototype, not production software</li>
+      <li>No real database or payment integration</li>
+      <li>No live examination or authentication systems</li>
+      <li>Demonstrates UI and interaction only</li>
+    </ul>
+  </section>
+
+  <!-- 20 Future Improvements -->
+  <section class="slide" data-notes="If developed further: SIS integration, auth, real-time results, payments, notifications, accessibility.">
+    <h2>Future Improvements</h2>
+    <ul>
+      <li>SIS integration and secure auth</li>
+      <li>Real-time results and fee updates</li>
+      <li>Online payment and push notifications</li>
+      <li>Accessibility and additional usability testing</li>
+    </ul>
+  </section>
+
+  <!-- 21 Conclusion -->
+  <section class="slide" data-notes="Conclude: centralized, easy-to-use mobile interface applying HCI principles.">
+    <h2>Conclusion</h2>
+    <p>The University Student Portal Mobile App applies Human–Computer Interaction principles to deliver a centralized, intuitive, and accessible student experience.</p>
+    <p class="small">Thank you. Questions?</p>
+  </section>
+
+  <!-- footer -->
+  <div class="footer">
+    <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    <span id="slideCount">1 / 21</span>
+  </div>
+  <span class="hint">← → or Space · N = notes · P = print</span>
+</div>
+
+<div id="notes"></div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const notesEl = document.getElementById('notes');
+  const countEl = document.getElementById('slideCount');
+  const dots = document.querySelectorAll('.footer .dot');
+  let i = 0;
+
+  function total() { return slides.length; }
+  function go(n, dir) {
+    const prev = slides[i];
+    prev.classList.remove('active');
+    prev.classList.add(dir === 1 ? 'right' : 'left');
+    i = Math.max(0, Math.min(n, total() - 1));
+    const cur = slides[i];
+    cur.classList.remove('left', 'right');
+    cur.classList.add('active');
+    countEl.textContent = (i + 1) + ' / ' + total();
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+    const nt = cur.getAttribute('data-notes') || '';
+    notesEl.innerHTML = nt ? '<h4>Speaker Notes</h4><p>' + nt.replace(/\n/g, '</p><p>') + '</p>' : '';
+  }
+  go(0, 0);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault(); go(i + 1, 1);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault(); go(i - 1, -1);
+    } else if (e.key === 'n' || e.key === 'N') {
+      notesEl.classList.toggle('open');
+    } else if (e.key === 'p' || e.key === 'P') {
+      window.print();
+    }
+  });
+
+  document.querySelectorAll('.footer .dot').forEach((d, idx) => {
+    d.addEventListener('click', () => go(idx, idx >= i ? 1 : -1));
+  });
+
+  document.addEventListener('click', e => {
+    if (e.target === notesEl) notesEl.classList.remove('open');
+    if (e.target === document.querySelector('#deck') && e.clientY < window.innerHeight * 0.4) {
+      go(i + 1, 1);
+    }
+  });
+})();
+</script>
+</body>
+</html>
